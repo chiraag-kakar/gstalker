@@ -1,38 +1,112 @@
-.App {
+@import 
+url(https://fonts.googleapis.com/css?family=Open+Sans);
+.App{
   text-align: center;
+  display: grid;
+  grid-template-rows: 70px auto;
+  grid-template-columns: minmax(50px,1fr) 1fr minmax(50px,1fr);
+  grid-row-gap: 2em;
+}
+#header{
+  grid-column: 1/5;
+  grid-row: 1/2;
+  background-color: #000000;
+}
+#header h2{
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 10px;
+  color: #FFF;
+}
+div.wrapper{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+#search-bar{
+  width: 100%;
+  position: relative
+}
+#search-bar input{
+  margin-top: 20px;
+  width: 258px;
+  border: 3px solid #050505;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+#search-bar input:focus{
+  color: #000000;
+}
+.searchButton{
+  margin-left: -9px;
+  margin-top: 20px;
+  position: absolute;  
+  /* right: -50px; */
+  width: 40px;
+  height: 36px;
+  border: 1px solid #081618;
+  background: #000000;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+}
+.searchButton i{
+  font-size: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 650px) {
+  .App {
+    overflow: hidden;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 70px auto;
+    grid-template-columns: 2px 1fr 2px;
+    grid-row-gap: 2em;
+  }
+  div.wrapper {
+    margin-right: 10%;
+}
+  #header h1{
+    width: auto;
+    grid-column: 1/4;
+  }
+  div#search-bar {
+   width: 80%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body , .gradient-background {
+  height: 600px;
+   background: linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+     animation: gradient 15s ease infinite; 
+      background-size: 400% 400%;
+  
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@-webkit-keyframes gradient{
+  0% {
+    background-position: 0 50%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+     background-position: 0% 50%;
+  }
+}
+@keyframes gradient{
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+     background-position: 0% 50%;
   }
 }
